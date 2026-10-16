@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newton's Study Circle | Live, Learn, Lead</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Font Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        nsc: {
+                            navy: '#0A2540',
+                            blue: '#1E3A8A',
+                            gold: '#D97706',
+                            yellow: '#F59E0B',
+                            lightGold: '#FEF3C7',
+                            slate: '#F8FAFC'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #0A2540 0%, #1E3A8A 60%, #1E40AF 100%);
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+        }
+        .gold-border {
+            border-color: #F59E0B;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="font-sans bg-slate-50 text-slate-800 antialiased selection:bg-amber-400 selection:text-slate-900">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-amber-500 text-slate-900 px-4 py-2 text-sm font-semibold flex justify-between items-center shadow-inner">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+            <div class="flex items-center space-x-2">
+                <span class="bg-slate-900 text-amber-400 text-xs px-2 py-0.5 rounded-full uppercase tracking-wider font-bold">Admissions Open</span>
+                <span>Session 2026-27 | Classes 6th to 10th (CBSE / ICSE) & Competitive Edge</span>
+            </div>
+            <div class="flex items-center space-x-6 text-xs md:text-sm">
+                <a href="tel:8273733624" class="hover:underline flex items-center gap-1">
+                    <i class="fa-solid fa-phone"></i> Call: +91 8273733624
+                </a>
+                <span class="hidden md:inline">|</span>
+                <span class="hidden md:inline flex items-center gap-1"><i class="fa-solid fa-award"></i> Est. 2018</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-nsc-navy/95 backdrop-blur-md text-white shadow-lg border-b border-amber-500/30">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            
+            <!-- Logo Section -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-12 h-12 rounded-full border-2 border-amber-400 bg-white flex items-center justify-center p-1 shadow-md group-hover:scale-105 transition-transform">
+                    <!-- SVG Emblem representing NSC -->
+                    <svg viewBox="0 0 100 100" class="w-full h-full">
+                        <circle cx="50" cy="50" r="46" fill="none" stroke="#0A2540" stroke-width="4"/>
+                        <circle cx="50" cy="50" r="41" fill="none" stroke="#D97706" stroke-width="2"/>
+                        <text x="50" y="58" font-size="28" font-weight="bold" fill="#0A2540" text-anchor="middle" font-family="serif">NSC</text>
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="text-xl md:text-2xl font-black tracking-tight leading-none text-white group-hover:text-amber-400 transition-colors">
+                        NEWTON'S <span class="text-amber-400">STUDY CIRCLE</span>
+                    </h1>
+                    <p class="text-xs text-amber-300 font-semibold tracking-widest uppercase mt-0.5">LIVE, LEARN, LEAD</p>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <div class="hidden lg:flex items-center space-x-8 text-sm font-medium">
+                <a href="#about" class="hover:text-amber-400 transition-colors">About Us</a>
+                <a href="#infrastructure" class="hover:text-amber-400 transition-colors">Infrastructure</a>
+                <a href="#faculty" class="hover:text-amber-400 transition-colors">Faculty & Mentors</a>
+                <a href="#courses" class="hover:text-amber-400 transition-colors">Courses Offered</a>
+                <a href="#features" class="hover:text-amber-400 transition-colors">Why Choose Us</a>
+                <a href="#contact" class="bg-amber-500 hover:bg-amber-400 text-slate-900 px-4 py-2 rounded-lg font-bold shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+                    Enquire Now
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="lg:hidden text-2xl focus:outline-none text-amber-400 p-2">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-nsc-navy border-t border-slate-800 px-4 py-4 space-y-3 text-sm">
+            <a href="#about" class="block hover:text-amber-400 py-1">About Us</a>
+            <a href="#infrastructure" class="block hover:text-amber-400 py-1">Infrastructure</a>
+            <a href="#faculty" class="block hover:text-amber-400 py-1">Faculty & Mentors</a>
+            <a href="#courses" class="block hover:text-amber-400 py-1">Courses Offered</a>
+            <a href="#features" class="block hover:text-amber-400 py-1">Why Choose Us</a>
+            <a href="#contact" class="block bg-amber-500 text-slate-900 text-center py-2.5 rounded-lg font-bold mt-2">Enquire Now</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-16 lg:py-24 relative overflow-hidden">
+        <!-- Abstract Background Orbs -->
+        <div class="absolute -top-24 -left-24 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-amber-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                <div class="inline-flex items-center space-x-2 bg-amber-500/10 border border-amber-400/30 px-3 py-1.5 rounded-full text-amber-300 text-xs md:text-sm font-semibold">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span>Building Strong Foundation Since 2018</span>
+                </div>
+
+                <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                    Empowering Minds to <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500">LIVE, LEARN, & LEAD</span>
+                </h1>
+
+                <p class="text-slate-300 text-base md:text-lg max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                    Newton’s Study Circle provides premier coaching for Classes 6th to 10th (CBSE/ICSE). Focused on conceptual mastery in Physics, Chemistry, Mathematics, and Biology with proven track records.
+                </p>
+
+                <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-2">
+                    <a href="#contact" class="bg-amber-500 hover:bg-amber-400 text-slate-950 px-8 py-3.5 rounded-xl font-bold shadow-lg hover:shadow-amber-500/30 transition-all text-center">
+                        <i class="fa-solid fa-paper-plane mr-2"></i> Book Free Demo Class
+                    </a>
+                    <a href="tel:8273733624" class="bg-slate-800/80 hover:bg-slate-700 text-white border border-slate-600 px-8 py-3.5 rounded-xl font-semibold transition-all text-center flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-phone text-amber-400"></i> 8273733624
+                    </a>
+                </div>
+
+                <!-- Stats counter -->
+                <div class="grid grid-cols-3 gap-4 pt-8 border-t border-slate-700/60 max-w-lg mx-auto lg:mx-0">
+                    <div>
+                        <p class="text-2xl md:text-3xl font-extrabold text-amber-400">8+ Yrs</p>
+                        <p class="text-xs text-slate-400">Academic Excellence</p>
+                    </div>
+                    <div>
+                        <p class="text-2xl md:text-3xl font-extrabold text-amber-400">100%</p>
+                        <p class="text-xs text-slate-400">Conceptual Focus</p>
+                    </div>
+                    <div>
+                        <p class="text-2xl md:text-3xl font-extrabold text-amber-400">1000+</p>
+                        <p class="text-xs text-slate-400">Successful Students</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Image Preview Card -->
+            <div class="lg:col-span-5 relative">
+                <div class="relative mx-auto max-w-md rounded-2xl overflow-hidden shadow-2xl border-4 border-amber-400/40 group">
+                    <!-- Dynamic classroom visual representation -->
+                    <div class="bg-slate-800 relative aspect-[4/5] flex items-center justify-center text-center p-6 bg-cover bg-center" style="background-image: linear-gradient(to bottom, rgba(10, 37, 64, 0.4), rgba(10, 37, 64, 0.85));">
+                        <div class="absolute inset-0 bg-nsc-navy/40"></div>
+                        
+                        <div class="relative z-10 space-y-4">
+                            <div class="w-16 h-16 rounded-full bg-amber-500 text-slate-900 flex items-center justify-center mx-auto text-2xl font-bold shadow-lg">
+                                <i class="fa-solid fa-chalkboard-user"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">Interactive Learning Hub</h3>
+                            <p class="text-xs text-amber-200">Well-ventilated, equipped classrooms with personal attention to every student.</p>
+                            
+                            <div class="pt-4 flex justify-center">
+                                <a href="#infrastructure" class="inline-flex items-center text-xs bg-white/20 hover:bg-white/30 backdrop-blur-md text-white px-4 py-2 rounded-lg font-medium transition-colors border border-white/20">
+                                    View Full Campus Infrastructure <i class="fa-solid fa-arrow-right ml-2 text-amber-400"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="absolute bottom-4 left-4 right-4 bg-nsc-navy/90 backdrop-blur-md p-3 rounded-xl border border-amber-400/30 text-xs text-amber-300 flex justify-between items-center">
+                        <span><i class="fa-solid fa-location-dot text-amber-400 mr-1"></i> Dedicated Study Spaces</span>
+                        <span class="bg-amber-500 text-slate-900 font-bold px-2 py-0.5 rounded text-[10px]">VERIFIED FACILITY</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center mb-12">
+                <span class="text-amber-600 font-bold text-xs uppercase tracking-widest bg-amber-100 px-3 py-1 rounded-full">Our Heritage</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mt-2">Welcome to Newton's Study Circle</h2>
+                <div class="w-20 h-1 bg-amber-500 mx-auto mt-4 rounded-full"></div>
+                <p class="text-slate-600 mt-4 text-base leading-relaxed">
+                    Established in 2018, Newton's Study Circle has consistently stood for quality education, deep conceptual clarity, and dedicated student mentorship. We bridge the gap between basic textbook learning and competitive problem-solving skills.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-blue-100 text-nsc-blue rounded-xl flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-atom"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Conceptual Clarity</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        We don't encourage rote learning. Every scientific formula and mathematical theorem is broken down to fundamentals.
+                    </p>
+                </div>
+
+                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-users-rectangle"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Focused Batch Sizes</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Small batches ensure that every student gets direct attention, space to clear doubts, and tailored mentor guidance.
+                    </p>
+                </div>
+
+                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">Regular Evaluation</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Weekly chapter tests, mock board examinations, and detailed performance tracking keep parents and students updated.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Campus Infrastructure & Facilities Showcase -->
+    <section id="infrastructure" class="py-16 bg-slate-100 border-y border-slate-200">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+                <div>
+                    <span class="text-amber-600 font-bold text-xs uppercase tracking-widest bg-amber-100 px-3 py-1 rounded-full">Explore Campus</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mt-2">Infrastructure & Learning Environment</h2>
+                </div>
+                <p class="text-slate-500 text-sm max-w-md mt-2 md:mt-0">
+                    Designed for optimal focus, comfort, and interactive engagement for students and faculty.
+                </p>
+            </div>
+
+            <!-- Gallery Grid showcasing institute infrastructure -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Facility 1: Director / Counseling Office -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 flex flex-col group hover:shadow-xl transition-all">
+                    <div class="relative bg-slate-800 aspect-[4/3] overflow-hidden">
+                        <!-- Mock visual for Office Desk Image -->
+                        <div class="w-full h-full bg-slate-800 flex flex-col justify-between p-6 text-white relative">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/40 to-transparent"></div>
+                            
+                            <div class="relative z-10 flex justify-between items-start">
+                                <span class="bg-amber-500 text-slate-950 text-xs font-bold px-2.5 py-1 rounded-md">Counseling & Office</span>
+                                <span class="bg-slate-900/80 text-amber-300 text-xs px-2 py-1 rounded border border-amber-400/30">Est. 2018</span>
+                            </div>
+
+                            <div class="relative z-10 space-y-2">
+                                <div class="flex items-center space-x-2 text-amber-400">
+                                    <i class="fa-solid fa-user-tie"></i>
+                                    <span class="font-bold text-sm">Director's Desk & Counseling Room</span>
+                                </div>
+                                <p class="text-xs text-slate-300">Equipped with academic references, standard curriculum literature, and certification records.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-lg group-hover:text-amber-600 transition-colors">Executive Office & Mentorship Desk</h3>
+                            <p class="text-slate-600 text-xs mt-1 leading-relaxed">
+                                A clean, quiet, and professional space for parent-teacher interactions, career guidance, and personalized doubt sessions with institute leadership.
+                            </p>
+                        </div>
+                        <ul class="text-xs text-slate-500 space-y-1.5 pt-2 border-t border-slate-100">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-amber-500 mr-2"></i> Official NSC Certified Center</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-amber-500 mr-2"></i> One-on-one Student Counseling</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Facility 2: Interactive Classroom -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 flex flex-col group hover:shadow-xl transition-all">
+                    <div class="relative bg-slate-800 aspect-[4/3] overflow-hidden">
+                        <!-- Mock visual for Classroom Image -->
+                        <div class="w-full h-full bg-slate-800 flex flex-col justify-between p-6 text-white relative">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/40 to-transparent"></div>
+                            
+                            <div class="relative z-10 flex justify-between items-start">
+                                <span class="bg-blue-600 text-white text-xs font-bold px-2.5 py-1 rounded-md">Interactive Batch</span>
+                                <span class="bg-slate-900/80 text-amber-300 text-xs px-2 py-1 rounded border border-amber-400/30"><i class="fa-solid fa-lightbulb text-amber-400"></i> Active Physics Session</span>
+                            </div>
+
+                            <div class="relative z-10 space-y-2">
+                                <div class="flex items-center space-x-2 text-amber-400">
+                                    <i class="fa-solid fa-chalkboard-user"></i>
+                                    <span class="font-bold text-sm">Focused Classroom Layout</span>
+                                </div>
+                                <p class="text-xs text-slate-300">Smart whiteboard teaching setup with educational posters & physical map aids.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-lg group-hover:text-amber-600 transition-colors">Well-Ventilated Classrooms</h3>
+                            <p class="text-slate-600 text-xs mt-1 leading-relaxed">
+                                Ergonomic seating, adequate lighting, whiteboard tools, and visual aid banners ("Live, Learn, Lead") ensuring maximum focus during lectures.
+                            </p>
+                        </div>
+                        <ul class="text-xs text-slate-500 space-y-1.5 pt-2 border-t border-slate-100">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-amber-500 mr-2"></i> Structured Board Preparation</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-amber-500 mr-2"></i> Attentive & Safe Atmosphere</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Facility 3: Spacious Corridor & Announcements Wall -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-200 flex flex-col group hover:shadow-xl transition-all">
+                    <div class="relative bg-slate-800 aspect-[4/3] overflow-hidden">
+                        <!-- Mock visual for Corridor Image -->
+                        <div class="w-full h-full bg-slate-800 flex flex-col justify-between p-6 text-white relative">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/40 to-transparent"></div>
+                            
+                            <div class="relative z-10 flex justify-between items-start">
+                                <span class="bg-emerald-600 text-white text-xs font-bold px-2.5 py-1 rounded-md">Institute Campus</span>
+                                <span class="bg-slate-900/80 text-amber-300 text-xs px-2 py-1 rounded border border-amber-400/30">Wide Passageways</span>
+                            </div>
+
+                            <div class="relative z-10 space-y-2">
+                                <div class="flex items-center space-x-2 text-amber-400">
+                                    <i class="fa-solid fa-building-columns"></i>
+                                    <span class="font-bold text-sm">Spacious Hallways & Gallery</span>
+                                </div>
+                                <p class="text-xs text-slate-300">Information boards, clean surroundings, and purified drinking water facilities.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
+                        <div>
+                            <h3 class="font-bold text-slate-900 text-lg group-hover:text-amber-600 transition-colors">Safe & Clean Infrastructure</h3>
+                            <p class="text-slate-600 text-xs mt-1 leading-relaxed">
+                                High hygiene standards, clear safety compliance, test schedule announcements, and spacious corridors for smooth student movement.
+                            </p>
+                        </div>
+                        <ul class="text-xs text-slate-500 space-y-1.5 pt-2 border-t border-slate-100">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-amber-500 mr-2"></i> Purified Water & Clean Restrooms</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-amber-500 mr-2"></i> Notice Board & Test Notifications</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Faculty & Mentorship Section -->
+    <section id="faculty" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center mb-12">
+                <span class="text-amber-600 font-bold text-xs uppercase tracking-widest bg-amber-100 px-3 py-1 rounded-full">Expert Educators</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mt-2">Dedicated Leadership & Faculty</h2>
+                <div class="w-20 h-1 bg-amber-500 mx-auto mt-4 rounded-full"></div>
+                <p class="text-slate-600 mt-4 text-sm md:text-base">
+                    Our mentors are passionate about simplifying complex scientific concepts and building problem-solving confidence in students.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                
+                <!-- Faculty Card 1 -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 text-center relative hover:border-amber-400 transition-all shadow-sm">
+                    <div class="w-24 h-24 rounded-full bg-nsc-navy text-amber-400 flex items-center justify-center text-3xl mx-auto mb-4 border-4 border-amber-400 shadow-md">
+                        <i class="fa-solid fa-user-graduate"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900">Senior Physics Mentor</h3>
+                    <p class="text-xs text-amber-600 font-bold uppercase tracking-wider mb-3">Head of Science Dept.</p>
+                    <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                        Specializes in Physics & Mechanics formulas, numerical analysis, and CBSE/ICSE board preparation techniques.
+                    </p>
+                    <div class="inline-flex items-center space-x-1 text-xs text-slate-500 bg-white px-3 py-1 rounded-full border border-slate-200">
+                        <i class="fa-solid fa-book-bookmark text-amber-500"></i>
+                        <span>Classes 8th - 10th Physics</span>
+                    </div>
+                </div>
+
+                <!-- Faculty Card 2 -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 text-center relative hover:border-amber-400 transition-all shadow-sm">
+                    <div class="w-24 h-24 rounded-full bg-nsc-navy text-amber-400 flex items-center justify-center text-3xl mx-auto mb-4 border-4 border-amber-400 shadow-md">
+                        <i class="fa-solid fa-square-root-variable"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900">Mathematics Expert</h3>
+                    <p class="text-xs text-amber-600 font-bold uppercase tracking-wider mb-3">Quantitative & Logic Lead</p>
+                    <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                        Focuses on Algebra, Geometry, and analytical problem solving with step-by-step guidance for high scoring.
+                    </p>
+                    <div class="inline-flex items-center space-x-1 text-xs text-slate-500 bg-white px-3 py-1 rounded-full border border-slate-200">
+                        <i class="fa-solid fa-book-bookmark text-amber-500"></i>
+                        <span>Classes 6th - 10th Maths</span>
+                    </div>
+                </div>
+
+                <!-- Faculty Card 3 -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 text-center relative hover:border-amber-400 transition-all shadow-sm">
+                    <div class="w-24 h-24 rounded-full bg-nsc-navy text-amber-400 flex items-center justify-center text-3xl mx-auto mb-4 border-4 border-amber-400 shadow-md">
+                        <i class="fa-solid fa-flask"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900">Chemistry & Biology Mentor</h3>
+                    <p class="text-xs text-amber-600 font-bold uppercase tracking-wider mb-3">Life Sciences Specialist</p>
+                    <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                        Interactive sessions covering chemical reactions, organic concepts, and biology diagrams for board excellence.
+                    </p>
+                    <div class="inline-flex items-center space-x-1 text-xs text-slate-500 bg-white px-3 py-1 rounded-full border border-slate-200">
+                        <i class="fa-solid fa-book-bookmark text-amber-500"></i>
+                        <span>Classes 8th - 10th Bio & Chem</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic Courses Offered -->
+    <section id="courses" class="py-16 bg-nsc-navy text-white relative">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="bg-amber-500/20 text-amber-300 font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full border border-amber-400/30">Academic Programs</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold mt-3">Comprehensive Courses Offered</h2>
+                <p class="text-slate-300 text-sm mt-2">Tailored curriculum alignment for CBSE & ICSE Boards</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Course 1 -->
+                <div class="bg-slate-900/80 rounded-2xl p-6 border border-slate-700 hover:border-amber-400 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="bg-amber-500 text-slate-950 font-bold text-xs px-3 py-1 rounded-full">CLASSES 9th & 10th</span>
+                            <span class="text-xs text-slate-400">CBSE / ICSE</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-amber-400 mb-2">Board Mastery Batch</h3>
+                        <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                            In-depth preparation for Board Examinations with full coverage of Physics, Chemistry, Biology, and Mathematics.
+                        </p>
+                        <ul class="text-xs text-slate-300 space-y-2 mb-6">
+                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-amber-400 mr-2"></i> NCERT & Reference Book Solving</li>
+                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-amber-400 mr-2"></i> Board Pattern Sample Test Series</li>
+                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-amber-400 mr-2"></i> Special Revision Batches</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="w-full text-center bg-slate-800 hover:bg-amber-500 hover:text-slate-950 border border-slate-600 text-white font-bold py-2.5 rounded-xl text-xs transition-all">
+                        Inquire For Batch Timings
+                    </a>
+                </div>
+
+                <!-- Course 2 -->
+                <div class="bg-slate-900/80 rounded-2xl p-6 border border-slate-700 hover:border-amber-400 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="bg-amber-500 text-slate-950 font-bold text-xs px-3 py-1 rounded-full">CLASSES 6th to 8th</span>
+                            <span class="text-xs text-slate-400">Foundation</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-amber-400 mb-2">Junior Foundation Batch</h3>
+                        <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                            Nurturing curiosity and strong mental aptitude in Mathematics and General Sciences from early middle school.
+                        </p>
+                        <ul class="text-xs text-slate-300 space-y-2 mb-6">
+                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-amber-400 mr-2"></i> Base Concept Building</li>
+                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-amber-400 mr-2"></i> Interactive Science Demos</li>
+                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-amber-400 mr-2"></i> Logical Reasoning Development</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="w-full text-center bg-slate-800 hover:bg-amber-500 hover:text-slate-950 border border-slate-600 text-white font-bold py-2.5 rounded-xl text-xs transition-all">
+                        Inquire For Batch Timings
+                    </a>
+                </div>
+
+                <!-- Course 3 -->
+                <div class="bg-slate-900/80 rounded-2xl p-6 border border-slate-700 hover:border-amber-400 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="bg-amber-500 text-slate-950 font-bold text-xs px-3 py-1 rounded-full">SPECIALIZED MODULES</span>
+                            <span class="text-xs text-slate-400">Subject Specific</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-amber-400 mb-2">Physics & Maths Focus</h3>
+                        <p class="text-slate-300 text-xs leading-relaxed mb-4">
+                            Targeted guidance for students looking to strengthen specific numerical or conceptual weak areas.
+                        </p>
+                        <ul class="text-xs text-slate-300 space-y-2 mb-6">
+                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-amber-400 mr-2"></i> Formula Application Worksheets</li>
+                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-amber-400 mr-2"></i> Personal Doubt Clearing Hours</li>
+                            <li class="flex items-center"><i class="fa-solid fa-circle-check text-amber-400 mr-2"></i> Chapter-Wise Test Analysis</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="w-full text-center bg-slate-800 hover:bg-amber-500 hover:text-slate-950 border border-slate-600 text-white font-bold py-2.5 rounded-xl text-xs transition-all">
+                        Inquire For Batch Timings
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Features -->
+    <section id="features" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center mb-12">
+                <span class="text-amber-600 font-bold text-xs uppercase tracking-widest bg-amber-100 px-3 py-1 rounded-full">Our Core Value</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mt-2">Why Parents Trust Newton's Study Circle</h2>
+                <div class="w-20 h-1 bg-amber-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <div class="p-5 border border-slate-200 rounded-2xl hover:border-amber-400 hover:shadow-md transition-all">
+                    <div class="w-10 h-10 bg-amber-100 text-amber-600 rounded-lg flex items-center justify-center font-bold text-lg mb-3">
+                        <i class="fa-solid fa-clipboard-check"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 mb-1 text-base">Regular Test Series</h4>
+                    <p class="text-slate-600 text-xs leading-relaxed">Weekly & monthly evaluation tests designed exactly as per board examination patterns.</p>
+                </div>
+
+                <div class="p-5 border border-slate-200 rounded-2xl hover:border-amber-400 hover:shadow-md transition-all">
+                    <div class="w-10 h-10 bg-amber-100 text-amber-600 rounded-lg flex items-center justify-center font-bold text-lg mb-3">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 mb-1 text-base">Parent Updates</h4>
+                    <p class="text-slate-600 text-xs leading-relaxed">Continuous reporting of student attendance, homework completion, and test marks to parents.</p>
+                </div>
+
+                <div class="p-5 border border-slate-200 rounded-2xl hover:border-amber-400 hover:shadow-md transition-all">
+                    <div class="w-10 h-10 bg-amber-100 text-amber-600 rounded-lg flex items-center justify-center font-bold text-lg mb-3">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 mb-1 text-base">Safe Campus</h4>
+                    <p class="text-slate-600 text-xs leading-relaxed">Clean, disciplined, and secure corridor and classroom environment for all boys and girls.</p>
+                </div>
+
+                <div class="p-5 border border-slate-200 rounded-2xl hover:border-amber-400 hover:shadow-md transition-all">
+                    <div class="w-10 h-10 bg-amber-100 text-amber-600 rounded-lg flex items-center justify-center font-bold text-lg mb-3">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 mb-1 text-base">Conceptual Clarity</h4>
+                    <p class="text-slate-600 text-xs leading-relaxed">Focus on "why" behind formulas rather than plain memorization of solutions.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Admission Enquiries & Contact Form -->
+    <section id="contact" class="py-16 bg-slate-100 border-t border-slate-200">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-200 grid grid-cols-1 lg:grid-cols-12">
+                
+                <!-- Direct Call Side -->
+                <div class="lg:col-span-5 bg-nsc-navy text-white p-8 lg:p-10 flex flex-col justify-between">
+                    <div>
+                        <div class="inline-flex items-center space-x-2 bg-amber-500/20 text-amber-300 text-xs px-3 py-1 rounded-full font-bold mb-6">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <span>Admissions Open 2026</span>
+                        </div>
+                        <h3 class="text-2xl font-extrabold mb-4 text-white">Get in Touch with Newton's Study Circle</h3>
+                        <p class="text-slate-300 text-xs leading-relaxed mb-6">
+                            Have questions regarding batch timings, fee structures, or faculty availability? Visit our center or call us directly.
+                        </p>
+
+                        <div class="space-y-4 text-sm">
+                            <div class="flex items-start space-x-3">
+                                <div class="w-8 h-8 rounded-full bg-amber-500 text-slate-950 flex items-center justify-center shrink-0 font-bold mt-0.5">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-400">Phone / WhatsApp</p>
+                                    <a href="tel:8273733624" class="font-bold text-amber-400 hover:underline text-base">+91 8273733624</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-3">
+                                <div class="w-8 h-8 rounded-full bg-amber-500 text-slate-950 flex items-center justify-center shrink-0 font-bold mt-0.5">
+                                    <i class="fa-solid fa-clock"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-400">Institute Timings</p>
+                                    <p class="font-semibold text-xs text-slate-200">Mon - Sat: 3:00 PM – 8:00 PM</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-3">
+                                <div class="w-8 h-8 rounded-full bg-amber-500 text-slate-950 flex items-center justify-center shrink-0 font-bold mt-0.5">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-400">Location</p>
+                                    <p class="font-semibold text-xs text-slate-200">Newton's Study Circle Main Campus, India</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-8 border-t border-slate-700 mt-6">
+                        <p class="text-xs text-slate-400">Tagline: <strong class="text-amber-300">LIVE, LEARN, LEAD</strong></p>
+                    </div>
+                </div>
+
+                <!-- Form Side -->
+                <div class="lg:col-span-7 p-8 lg:p-10">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-2">Book a Free Demo / Inquiry</h3>
+                    <p class="text-slate-500 text-xs mb-6">Fill out the form below and our team will get back to you shortly.</p>
+
+                    <form id="inquiryForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Student's Name</label>
+                            <input type="text" required placeholder="e.g. Rahul Sharma" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm">
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Parent's Phone No.</label>
+                                <input type="tel" required placeholder="e.g. 9876543210" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Class / Grade</label>
+                                <select required class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm bg-white">
+                                    <option value="">Select Class</option>
+                                    <option value="Class 6">Class 6th</option>
+                                    <option value="Class 7">Class 7th</option>
+                                    <option value="Class 8">Class 8th</option>
+                                    <option value="Class 9">Class 9th</option>
+                                    <option value="Class 10">Class 10th</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Board</label>
+                            <div class="flex space-x-6 text-sm">
+                                <label class="flex items-center space-x-2">
+                                    <input type="radio" name="board" value="CBSE" checked class="text-amber-500 focus:ring-amber-500">
+                                    <span>CBSE</span>
+                                </label>
+                                <label class="flex items-center space-x-2">
+                                    <input type="radio" name="board" value="ICSE" class="text-amber-500 focus:ring-amber-500">
+                                    <span>ICSE</span>
+                                </label>
+                                <label class="flex items-center space-x-2">
+                                    <input type="radio" name="board" value="State/Other" class="text-amber-500 focus:ring-amber-500">
+                                    <span>Other</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Message / Specific Query</label>
+                            <textarea rows="3" placeholder="Mention subjects required (Physics, Chemistry, Maths, Bio)..." class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold py-3 rounded-xl shadow-lg hover:shadow-amber-500/20 transition-all text-sm uppercase tracking-wider">
+                            Submit Inquiry
+                        </button>
+                    </form>
+
+                    <!-- Success Message Container -->
+                    <div id="successMsg" class="hidden mt-4 p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-xl text-xs font-semibold flex items-center gap-2">
+                        <i class="fa-solid fa-circle-check text-emerald-600 text-base"></i>
+                        <span>Thank you! Your enquiry has been registered. Our team will call you at +91 8273733624.</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-nsc-navy text-slate-400 py-12 border-t border-slate-800 text-xs">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="space-y-3">
+                <h4 class="text-white font-bold text-lg">Newton's Study Circle</h4>
+                <p class="text-amber-400 font-semibold uppercase tracking-widest text-[10px]">Live, Learn, Lead • Est. 2018</p>
+                <p class="leading-relaxed">Dedicated coaching institute empowering students in science and mathematics with structured methodology.</p>
+            </div>
+
+            <div>
+                <h5 class="text-white font-bold mb-3 uppercase tracking-wider text-[11px]">Quick Links</h5>
+                <ul class="space-y-2">
+                    <li><a href="#about" class="hover:text-amber-400 transition-colors">About Institute</a></li>
+                    <li><a href="#infrastructure" class="hover:text-amber-400 transition-colors">Campus Infrastructure</a></li>
+                    <li><a href="#courses" class="hover:text-amber-400 transition-colors">Courses & Batches</a></li>
+                    <li><a href="#faculty" class="hover:text-amber-400 transition-colors">Faculty Team</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5 class="text-white font-bold mb-3 uppercase tracking-wider text-[11px]">Key Subjects</h5>
+                <ul class="space-y-2">
+                    <li><i class="fa-solid fa-angle-right text-amber-500 mr-1"></i> Class 9 & 10 Physics</li>
+                    <li><i class="fa-solid fa-angle-right text-amber-500 mr-1"></i> Class 9 & 10 Chemistry</li>
+                    <li><i class="fa-solid fa-angle-right text-amber-500 mr-1"></i> Mathematics Conceptual</li>
+                    <li><i class="fa-solid fa-angle-right text-amber-500 mr-1"></i> Biology Board Prep</li>
+                </ul>
+            </div>
+
+            <div>
+                <h5 class="text-white font-bold mb-3 uppercase tracking-wider text-[11px]">Contact Info</h5>
+                <p class="mb-2"><strong class="text-slate-200">Phone:</strong> +91 8273733624</p>
+                <p class="mb-2"><strong class="text-slate-200">Established:</strong> 2018</p>
+                <a href="tel:8273733624" class="inline-block mt-2 bg-amber-500 text-slate-950 font-bold px-4 py-2 rounded-lg hover:bg-amber-400 transition-colors">
+                    <i class="fa-solid fa-phone mr-1"></i> Call Now
+                </a>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 pt-8 mt-8 border-t border-slate-800 text-center text-slate-500">
+            <p>&copy; 2026 Newton's Study Circle (Est. 2018). All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Interactive Script -->
+    <script>
+        // Toggle mobile navbar
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Form Submission Simulation
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const successMsg = document.getElementById('successMsg');
+            successMsg.classList.remove('hidden');
+            document.getElementById('inquiryForm').reset();
+            
+            setTimeout(() => {
+                successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 100);
+        }
+    </script>
+</body>
+</html>
